@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DownloadJSONWithCompletionClosuresDemoApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  @StateObject var vm = ContentViewModel()
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environmentObject(vm)
     }
+  }
 }
